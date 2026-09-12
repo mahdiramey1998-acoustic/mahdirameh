@@ -18,10 +18,10 @@
             --primary-light: #1e4976;
             --accent: #2563eb;
             --accent-cyan: #06b6d4;
-            --text: #1e293b;
-            --text-muted: #475569;
-            --card-bg: rgba(255, 255, 255, 0.88);
-            --border: rgba(226, 232, 240, 0.8);
+            --text: #0f172a;
+            --text-muted: #334155;
+            --card-bg: rgba(255, 255, 255, 0.93);
+            --border: rgba(226, 232, 240, 0.85);
             --border-hover: #93c5fd;
             --badge-bg: #eff6ff;
             --badge-text: #1d4ed8;
@@ -44,7 +44,7 @@
             background-color: #091e3a;
         }
 
-        /* لایه پس‌زمینه محو آزمایشگاه */
+        /* لایه پس‌زمینه با وضوح بالا و محو ملایم */
         .bg-image {
             position: fixed;
             top: 0;
@@ -55,19 +55,19 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            filter: blur(8px) brightness(0.65);
-            transform: scale(1.04); /* جلوگیری از حاشیه سفید ناشی از blur */
+            filter: blur(2px) brightness(0.85);
+            transform: scale(1.02);
             z-index: -2;
         }
 
-        /* روکش ملایم گرادیان روی عکس برای خوانایی عالی متن‌ها */
+        /* لایه تیره سبک برای حفظ وضوح عکس در عین خوانایی متن */
         .bg-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(15, 43, 76, 0.82) 100%);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.45) 0%, rgba(15, 43, 76, 0.55) 100%);
             z-index: -1;
         }
 
@@ -91,10 +91,10 @@
         header {
             position: sticky;
             top: 1rem;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.8);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             border-radius: 16px;
             margin-bottom: 2rem;
@@ -140,7 +140,7 @@
         /* Hero Section */
         .hero {
             position: relative;
-            background: rgba(15, 35, 65, 0.85);
+            background: rgba(15, 35, 65, 0.88);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             color: #ffffff;
@@ -148,8 +148,8 @@
             padding: 3rem 2.5rem;
             margin-bottom: 2.5rem;
             overflow: hidden;
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .hero::before {
@@ -184,8 +184,8 @@
             height: 145px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 0 25px rgba(6, 182, 212, 0.35);
+            border: 4px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.4);
             transition: transform 0.3s ease;
         }
 
@@ -222,7 +222,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.12);
             padding: 0.2rem 0.65rem;
             border-radius: 20px;
         }
@@ -249,7 +249,7 @@
             color: #ffffff;
             font-size: 0.85rem;
             font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(8px);
             transition: all 0.25s ease;
         }
@@ -259,7 +259,7 @@
             color: #ffffff;
             text-decoration: none;
             transform: translateY(-2px);
-            border-color: rgba(255, 255, 255, 0.45);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
         /* Sections */
@@ -271,7 +271,7 @@
             font-size: 1.35rem;
             font-weight: 700;
             color: #ffffff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
             margin-bottom: 1.25rem;
             display: flex;
             align-items: center;
@@ -292,14 +292,14 @@
             border-radius: 16px;
             padding: 1.6rem;
             margin-bottom: 1rem;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
             transition: all 0.25s ease;
             position: relative;
         }
 
         .card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
             border-color: var(--border-hover);
         }
 
@@ -361,7 +361,7 @@
             flex-shrink: 0;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
             border: 2px solid #ffffff;
             transition: transform 0.3s ease;
         }
@@ -509,7 +509,7 @@
             border: 1px solid rgba(37, 99, 235, 0.12);
         }
 
-        /* Grid */
+        /* Two Column Grid */
         .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -560,10 +560,10 @@
         }
 
         footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
             padding: 2.5rem 1rem;
             text-align: center;
-            color: #cbd5e1;
+            color: #e2e8f0;
             font-size: 0.85rem;
             margin-top: 4rem;
         }
@@ -571,7 +571,7 @@
 </head>
 <body>
 
-    <!-- المان‌های پس‌زمینه عکس محو و روکش شیشه‌ای -->
+    <!-- المان‌های پس‌زمینه عکس آزمایشگاه و پوشش نیمه‌شفاف -->
     <div class="bg-image"></div>
     <div class="bg-overlay"></div>
 
@@ -600,7 +600,7 @@
                 </div>
                 <div class="hero-text">
                     <h1>Mahdi Rameh</h1>
-                    <div class="subtitle"><i class="fa-solid fa-water"></i> Ph.D. Candidate in Physics &bull; Optical & Acoustic Manipulation</div>
+                    <div class="subtitle"><i class="fa-solid fa-water"></i> Ph.D. Candidate in Physics &bull; Optical & Acoustic Manipulation[cite: 1]</div>
                     <div class="birth-info">
                         <i class="fa-solid fa-calendar-days"></i> Born June 4, 1998 &bull; Age: <span id="current-age">28</span>[cite: 1]
                     </div>
@@ -621,7 +621,7 @@
         <!-- Research Profile -->
         <section>
             <h2 class="section-title"><i class="fa-solid fa-microscope"></i> Research Profile</h2>
-            <div class="card" style="font-size: 1.02rem; color: #334155; line-height: 1.8;">
+            <div class="card" style="font-size: 1.02rem; color: #1e293b; line-height: 1.8;">
                 <p>
                     Ph.D. researcher in experimental physics specializing in <strong>acoustic tweezers, optical tweezers, micro-particle trapping, acoustofluidics</strong>, and advanced optical microscopy (bright-field, phase contrast, dark-field, and fluorescence)[cite: 1]. Currently focused on developing integrated optical-acoustic manipulation systems for cell sorting, non-invasive isolation of motile cells, and the optimization of acoustic resonators[cite: 1].
                 </p>
@@ -693,7 +693,7 @@
         <section id="publications">
             <h2 class="section-title"><i class="fa-solid fa-book-bookmark"></i> Publications</h2>
             <div class="card">
-                <div class="card-title" style="font-size: 1.1rem;">Pressure sub-node formation by interparticle acoustic radiation forces</div>
+                <div class="card-title" style="font-size: 1.1rem;">Pressure sub-node formation by interparticle acoustic radiation forces[cite: 1]</div>
                 <div class="card-subtitle" style="margin-top: 0.3rem;"><strong>Rameh, M.</strong>, Akhlaghi, E. A., & Hajizadeh, F. (2025) &bull; <em>Physics of Fluids</em>, 37(3)[cite: 1]</div>
                 <div class="pub-actions">
                     <a href="https://doi.org/10.1063/5.0253818" target="_blank" rel="noopener" class="action-link doi-btn">
@@ -946,7 +946,7 @@
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Mahdi Rameh. All rights reserved. | Updated: August 2026[cite: 1]</p>
+            <p>&copy; 2026 Mahdi Rameh. All rights reserved. | Updated: August 2026</p>[cite: 1]
         </footer>
     </div>
 
