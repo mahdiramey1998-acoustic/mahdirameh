@@ -18,14 +18,14 @@
             --primary-light: #1e4976;
             --accent: #2563eb;
             --accent-cyan: #06b6d4;
-            --accent-glow: rgba(37, 99, 235, 0.18);
             --text: #1e293b;
             --text-muted: #64748b;
-            --card-bg: rgba(255, 255, 255, 0.88);
+            --card-bg: rgba(255, 255, 255, 0.9);
             --border: #e2e8f0;
             --border-hover: #93c5fd;
             --badge-bg: #eff6ff;
             --badge-text: #1d4ed8;
+            --rg-color: #00ccbb;
         }
 
         * {
@@ -39,14 +39,13 @@
             color: var(--text);
             line-height: 1.65;
             scroll-behavior: smooth;
-            /* پس‌زمینه با الگوی توری ظریف آزمایشگاهی */
-            background-color: #f1f5f9;
+            background-color: #f8fafc;
             background-image: 
-                radial-gradient(circle at 15% 15%, rgba(37, 99, 235, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 85% 85%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
-                linear-gradient(to right, rgba(226, 232, 240, 0.5) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(226, 232, 240, 0.5) 1px, transparent 1px);
-            background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 40%),
+                linear-gradient(to right, rgba(226, 232, 240, 0.4) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
             min-height: 100vh;
         }
 
@@ -58,25 +57,23 @@
 
         a:hover {
             color: var(--primary-light);
-            text-decoration: underline;
         }
 
-        /* حاشیه امن دور کل سایت */
         .site-wrapper {
             max-width: 1020px;
             margin: 2rem auto;
             padding: 0 1.5rem;
         }
 
-        /* Header Navigation با افکت شیشه‌ای */
+        /* Header Navigation */
         header {
             position: sticky;
             top: 1rem;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
             border-radius: 16px;
             margin-bottom: 2rem;
             z-index: 1000;
@@ -118,50 +115,34 @@
             text-decoration: none;
         }
 
-        /* Hero Section با پس‌زمینه امواج آکوستیک */
+        /* Hero Section */
         .hero {
             position: relative;
-            background: linear-gradient(145deg, #0a192f 0%, #112d4e 60%, #1a365d 100%);
+            background: linear-gradient(135deg, #091e3a 0%, #102a4e 100%);
             color: #ffffff;
             border-radius: 24px;
             padding: 3rem 2.5rem;
             margin-bottom: 2.5rem;
             overflow: hidden;
-            box-shadow: 0 20px 40px -15px rgba(10, 25, 47, 0.45);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 20px 40px -15px rgba(9, 30, 58, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* امواج آکوستیکی شبیه‌سازی شده در بک‌گراند */
         .hero::before {
             content: "";
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 550px;
-            height: 550px;
-            background: radial-gradient(circle, 
-                rgba(37, 99, 235, 0.25) 0%, 
-                rgba(6, 182, 212, 0.15) 30%, 
-                transparent 70%);
-            filter: blur(40px);
-            pointer-events: none;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            bottom: -30%;
-            left: 10%;
-            width: 400px;
-            height: 400px;
-            background: repeating-radial-gradient(
-                circle,
-                rgba(255, 255, 255, 0.03) 0,
-                rgba(255, 255, 255, 0.03) 15px,
-                transparent 16px,
-                transparent 30px
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0.0) 0px,
+                rgba(6, 182, 212, 0.04) 15px,
+                rgba(37, 99, 235, 0.07) 30px,
+                rgba(6, 182, 212, 0.04) 45px,
+                rgba(255, 255, 255, 0.0) 60px
             );
-            border-radius: 50%;
             pointer-events: none;
         }
 
@@ -174,22 +155,18 @@
             flex-wrap: wrap;
         }
 
-        .hero-avatar {
-            position: relative;
-        }
-
         .hero-avatar img {
             width: 145px;
             height: 145px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 0 30px rgba(6, 182, 212, 0.35);
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.3);
             transition: transform 0.3s ease;
         }
 
         .hero-avatar img:hover {
-            transform: scale(1.04) rotate(1deg);
+            transform: scale(1.03);
         }
 
         .hero-text {
@@ -247,10 +224,9 @@
             text-decoration: none;
             transform: translateY(-2px);
             border-color: rgba(255, 255, 255, 0.4);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        /* بخش‌ها */
+        /* Sections */
         section {
             margin-bottom: 2.75rem;
         }
@@ -270,40 +246,23 @@
             color: var(--accent);
         }
 
-        /* کارت‌ها با استایل مدرن و لبه‌های نرم */
+        /* Cards */
         .card {
             background: var(--card-bg);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(8px);
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 1.6rem;
             margin-bottom: 1rem;
-            box-shadow: 0 4px 15px -3px rgba(15, 23, 42, 0.03);
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 15px -3px rgba(15, 23, 42, 0.02);
+            transition: all 0.25s ease;
             position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--accent), var(--accent-cyan));
-            opacity: 0;
-            transition: opacity 0.25s ease;
         }
 
         .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px -5px rgba(15, 23, 42, 0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px -5px rgba(15, 23, 42, 0.06);
             border-color: var(--border-hover);
-        }
-
-        .card:hover::before {
-            opacity: 1;
         }
 
         .card-header {
@@ -347,7 +306,88 @@
             margin-bottom: 0.4rem;
         }
 
-        /* برچسب‌ها و مهارت‌ها */
+        /* استایل اختصاصی کارت جایزه همراه با عکس */
+        .award-card-with-photo {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .award-card-content {
+            flex: 1;
+        }
+
+        .award-card-img {
+            width: 220px;
+            height: 140px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            border: 2px solid #ffffff;
+            transition: transform 0.3s ease;
+        }
+
+        .award-card-img:hover {
+            transform: scale(1.03);
+        }
+
+        .award-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Action Buttons */
+        .pub-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.85rem;
+        }
+
+        .action-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.4rem 0.85rem;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            background: #ffffff;
+            transition: all 0.2s ease;
+        }
+
+        .action-link.rg-btn {
+            color: #009e91;
+            border-color: #99f6e4;
+            background: #f0fdfa;
+        }
+
+        .action-link.rg-btn:hover {
+            background: #00ccbb;
+            color: #ffffff;
+            border-color: #00ccbb;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .action-link.doi-btn {
+            color: var(--accent);
+            border-color: #bfdbfe;
+            background: #eff6ff;
+        }
+
+        .action-link.doi-btn:hover {
+            background: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        /* Skills */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -359,7 +399,6 @@
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 1.35rem;
-            box-shadow: 0 4px 15px -3px rgba(15, 23, 42, 0.03);
         }
 
         .skill-group h4 {
@@ -386,15 +425,9 @@
             font-size: 0.82rem;
             font-weight: 600;
             border: 1px solid rgba(37, 99, 235, 0.12);
-            transition: all 0.2s ease;
         }
 
-        .badge:hover {
-            background: #dbeafe;
-            transform: translateY(-1px);
-        }
-
-        /* سیستم دوستونه */
+        /* دو ستونه */
         .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -426,9 +459,17 @@
             .contact-links {
                 justify-content: center;
             }
+            .award-card-with-photo {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .award-card-img {
+                width: 100%;
+                height: 180px;
+                margin-top: 0.75rem;
+            }
         }
 
-        /* فوتر */
         footer {
             border-top: 1px solid var(--border);
             padding: 2.5rem 1rem;
@@ -458,24 +499,24 @@
             </nav>
         </header>
 
-        <!-- Hero Section با امواج آکوستیک -->
+        <!-- Hero Section -->
         <div class="hero" id="about">
             <div class="hero-content">
                 <div class="hero-avatar">
-                    <img src="profile.jpg" alt="Mahdi Rameh" onerror="this.src='https://ui-avatars.com/api/?name=Mahdi+Rameh&background=0d213d&color=fff&size=150'">
+                    <img src="profile.jpg" alt="Mahdi Rameh" onerror="this.src='https://ui-avatars.com/api/?name=Mahdi+Rameh&background=091e3a&color=fff&size=150'">
                 </div>
                 <div class="hero-text">
                     <h1>Mahdi Rameh</h1>
-                    <div class="subtitle"><i class="fa-solid fa-wave-square"></i> Ph.D. Candidate in Physics &bull; Optical & Acoustic Manipulation</div>
+                    <div class="subtitle"><i class="fa-solid fa-water"></i> Ph.D. Candidate in Physics &bull; Optical & Acoustic Manipulation</div>
                     <div class="affiliation">
-                        <i class="fa-solid fa-building-columns"></i> Department of Physics, Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran
+                        <i class="fa-solid fa-building-columns"></i> Department of Physics, Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran[cite: 1]
                     </div>
                     <div class="contact-links">
-                        <a href="mailto:m.rameh@iasbs.ac.ir" class="contact-btn"><i class="fa-solid fa-envelope"></i> m.rameh@iasbs.ac.ir</a>
-                        <a href="mailto:m.rameh98@gmail.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> m.rameh98@gmail.com</a>
-                        <a href="https://linkedin.com/in/mahdi-rameh-19122319a/" target="_blank" rel="noopener" class="contact-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                        <a href="https://researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="contact-btn"><i class="fa-brands fa-researchgate"></i> ResearchGate</a>
-                        <span class="contact-btn"><i class="fa-solid fa-phone"></i> (+98) 919-727-9867</span>
+                        <a href="mailto:m.rameh@iasbs.ac.ir" class="contact-btn"><i class="fa-solid fa-envelope"></i> m.rameh@iasbs.ac.ir[cite: 1]</a>
+                        <a href="mailto:m.rameh98@gmail.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> m.rameh98@gmail.com[cite: 1]</a>
+                        <a href="https://linkedin.com/in/mahdi-rameh-19122319a/" target="_blank" rel="noopener" class="contact-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn[cite: 1]</a>
+                        <a href="https://researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="contact-btn"><i class="fa-brands fa-researchgate"></i> ResearchGate[cite: 1]</a>
+                        <span class="contact-btn"><i class="fa-solid fa-phone"></i> (+98) 919-727-9867[cite: 1]</span>
                     </div>
                 </div>
             </div>
@@ -502,7 +543,7 @@
                         <div class="card-title">Ph.D. in Physics</div>
                         <div class="card-date">2022 &ndash; Present</div>
                     </div>
-                    <div class="card-subtitle">Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran</div>
+                    <div class="card-subtitle">Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran[cite: 1]</div>
                 </div>
 
                 <div class="card">
@@ -510,7 +551,7 @@
                         <div class="card-title">M.Sc. in Physics</div>
                         <div class="card-date">2020 &ndash; 2022</div>
                     </div>
-                    <div class="card-subtitle">Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran</div>
+                    <div class="card-subtitle">Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran[cite: 1]</div>
                 </div>
 
                 <div class="card">
@@ -518,7 +559,7 @@
                         <div class="card-title">B.Sc. in Physics</div>
                         <div class="card-date">2016 &ndash; 2020</div>
                     </div>
-                    <div class="card-subtitle">Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran</div>
+                    <div class="card-subtitle">Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran[cite: 1]</div>
                 </div>
             </section>
 
@@ -528,7 +569,7 @@
                 
                 <div class="card">
                     <div class="card-title" style="margin-bottom: 0.6rem;">
-                        <i class="fa-solid fa-wave-square" style="color: var(--accent);"></i> Micro-manipulation & Acoustofluidics
+                        <i class="fa-solid fa-water" style="color: var(--accent);"></i> Micro-manipulation & Acoustofluidics
                     </div>
                     <div class="tag-container">
                         <span class="badge">Acoustic Tweezers</span>
@@ -558,27 +599,36 @@
             <div class="card">
                 <div class="card-title" style="font-size: 1.1rem;">Pressure sub-node formation by interparticle acoustic radiation forces</div>
                 <div class="card-subtitle" style="margin-top: 0.3rem;"><strong>Rameh, M.</strong>, Akhlaghi, E. A., & Hajizadeh, F. (2025) &bull; <em>Physics of Fluids</em>, 37(3)[cite: 1]</div>
-                <p style="margin-top: 0.75rem; font-size: 0.9rem;">
-                    <a href="https://doi.org/10.1063/5.0253818" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.4rem; background: #eff6ff; padding: 0.4rem 0.8rem; border-radius: 8px; border: 1px solid #bfdbfe;">
+                <div class="pub-actions">
+                    <a href="https://doi.org/10.1063/5.0253818" target="_blank" rel="noopener" class="action-link doi-btn">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI: 10.1063/5.0253818[cite: 1]
                     </a>
-                </p>
+                    <a href="https://www.researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="action-link rg-btn">
+                        <i class="fa-brands fa-researchgate"></i> View on ResearchGate
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- Honors & Awards -->
+        <!-- Honors & Awards (با عکس جایزه) -->
         <section id="awards">
             <h2 class="section-title"><i class="fa-solid fa-trophy"></i> Honors & Awards</h2>
             
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title"><i class="fa-solid fa-award" style="color: #eab308;"></i> Winner &ndash; Selected Project Award (Physics Ideation)</div>
-                    <div class="card-date">Dec 2025</div>
+            <div class="card award-card-with-photo">
+                <div class="award-card-content">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fa-solid fa-award" style="color: #eab308;"></i> Winner &ndash; Selected Project Award (Physics Ideation)</div>
+                        <div class="card-date">Dec 2025</div>
+                    </div>
+                    <div class="card-subtitle">9th Festival of Young Scientists, Tehran, Iran[cite: 1]</div>
+                    <p style="font-size: 0.92rem; color: #475569; margin-top: 0.25rem;">
+                        <strong>Project:</strong> &ldquo;Design and Fabrication of an Acoustofluidic System for Non-Invasive Separation of Motile Cells&rdquo;[cite: 1]
+                    </p>
                 </div>
-                <div class="card-subtitle">9th Festival of Young Scientists, Tehran, Iran[cite: 1]</div>
-                <p style="font-size: 0.92rem; color: #475569; margin-top: 0.25rem;">
-                    <strong>Project:</strong> &ldquo;Design and Fabrication of an Acoustofluidic System for Non-Invasive Separation of Motile Cells&rdquo;[cite: 1]
-                </p>
+                <!-- بخش عکس مراسم جایزه -->
+                <div class="award-card-img">
+                    <img src="award.jpg" alt="Festival Award Ceremony" onerror="this.src='https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=400&q=80'">
+                </div>
             </div>
 
             <div class="card">
@@ -612,8 +662,8 @@
                 </div>
                 <div class="card-subtitle">Optical Tweezers Laboratory, IASBS[cite: 1]</div>
                 <ul>
-                    <li>Developed experimental setups integrating optical and acoustic tweezers for trapping micro-particles.[cite: 1]</li>
-                    <li>Investigated interparticle acoustic radiation forces and pressure sub-node formation in fluidic media.[cite: 1]</li>
+                    <li>Developed experimental setups integrating optical and acoustic tweezers for trapping micro-particles[cite: 1].</li>
+                    <li>Investigated interparticle acoustic radiation forces and pressure sub-node formation in fluidic media[cite: 1].</li>
                 </ul>
             </div>
 
@@ -624,8 +674,8 @@
                 </div>
                 <div class="card-subtitle">Fathoptics (PhyLabs), Zanjan, Iran[cite: 1]</div>
                 <ul>
-                    <li>Coordinated technical projects and team workflows in optical/technological development.[cite: 1]</li>
-                    <li>Managed project milestones, resources, and cross-functional team execution.[cite: 1]</li>
+                    <li>Coordinated technical projects and team workflows in optical/technological development[cite: 1].</li>
+                    <li>Managed project milestones, resources, and cross-functional team execution[cite: 1].</li>
                 </ul>
             </div>
 
@@ -636,7 +686,7 @@
                 </div>
                 <div class="card-subtitle">Department of Biological Sciences, IASBS[cite: 1]</div>
                 <ul>
-                    <li>Operated and maintained biological fluorescence microscopy systems for cross-disciplinary research projects.[cite: 1]</li>
+                    <li>Operated and maintained biological fluorescence microscopy systems for cross-disciplinary research projects[cite: 1].</li>
                 </ul>
             </div>
         </section>
@@ -660,12 +710,18 @@
             <!-- Conferences -->
             <section id="conferences">
                 <h2 class="section-title"><i class="fa-solid fa-users"></i> Conferences</h2>
+                
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">30th Annual IASBS Condensed Matter Meeting</div>
                         <div class="card-date">May 2025</div>
                     </div>
                     <div class="card-subtitle">IASBS, Zanjan, Iran (Poster Presentation)[cite: 1]</div>
+                    <div class="pub-actions">
+                        <a href="https://www.researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="action-link rg-btn">
+                            <i class="fa-brands fa-researchgate"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="card">
@@ -674,6 +730,11 @@
                         <div class="card-date">Dec 2024</div>
                     </div>
                     <div class="card-subtitle">Kharazmi University, Iran (Oral Presentation)[cite: 1]</div>
+                    <div class="pub-actions">
+                        <a href="https://www.researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="action-link rg-btn">
+                            <i class="fa-brands fa-researchgate"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="card">
@@ -682,6 +743,11 @@
                         <div class="card-date">Jan 2024</div>
                     </div>
                     <div class="card-subtitle">Damghan University, Iran (Poster Presentation)[cite: 1]</div>
+                    <div class="pub-actions">
+                        <a href="https://www.researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="action-link rg-btn">
+                            <i class="fa-brands fa-researchgate"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="card">
@@ -690,6 +756,11 @@
                         <div class="card-date">May 2022</div>
                     </div>
                     <div class="card-subtitle">Ankara, Turkey (Oral Presentation)[cite: 1]</div>
+                    <div class="pub-actions">
+                        <a href="https://www.researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="action-link rg-btn">
+                            <i class="fa-brands fa-researchgate"></i>
+                        </a>
+                    </div>
                 </div>
             </section>
         </div>
