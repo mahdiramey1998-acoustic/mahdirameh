@@ -20,7 +20,7 @@
             --accent-cyan: #06b6d4;
             --text: #1e293b;
             --text-muted: #64748b;
-            --card-bg: rgba(255, 255, 255, 0.9);
+            --card-bg: rgba(255, 255, 255, 0.92);
             --border: #e2e8f0;
             --border-hover: #93c5fd;
             --badge-bg: #eff6ff;
@@ -306,7 +306,7 @@
             margin-bottom: 0.4rem;
         }
 
-        /* استایل اختصاصی کارت جایزه همراه با عکس */
+        /* بخش جایزه همراه با عکس */
         .award-card-with-photo {
             display: flex;
             gap: 1.5rem;
@@ -337,6 +337,34 @@
             height: 100%;
             object-fit: cover;
             display: block;
+        }
+
+        /* کارت‌های اساتید و معرفین */
+        .ref-card {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+        }
+
+        .ref-avatar {
+            width: 85px;
+            height: 85px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #e2e8f0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .ref-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .ref-info {
+            flex: 1;
         }
 
         /* Action Buttons */
@@ -383,6 +411,20 @@
         .action-link.doi-btn:hover {
             background: var(--accent);
             color: #ffffff;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .action-link.web-btn {
+            color: #3b82f6;
+            border-color: #bfdbfe;
+            background: #eff6ff;
+        }
+
+        .action-link.web-btn:hover {
+            background: #3b82f6;
+            color: #ffffff;
+            border-color: #3b82f6;
             text-decoration: none;
             transform: translateY(-1px);
         }
@@ -468,6 +510,13 @@
                 height: 180px;
                 margin-top: 0.75rem;
             }
+            .ref-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .ref-card .pub-actions {
+                justify-content: center;
+            }
         }
 
         footer {
@@ -512,11 +561,11 @@
                         <i class="fa-solid fa-building-columns"></i> Department of Physics, Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran[cite: 1]
                     </div>
                     <div class="contact-links">
-                        <a href="mailto:m.rameh@iasbs.ac.ir" class="contact-btn"><i class="fa-solid fa-envelope"></i> m.rameh@iasbs.ac.ir[cite: 1]</a>
-                        <a href="mailto:m.rameh98@gmail.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> m.rameh98@gmail.com[cite: 1]</a>
-                        <a href="https://linkedin.com/in/mahdi-rameh-19122319a/" target="_blank" rel="noopener" class="contact-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn[cite: 1]</a>
-                        <a href="https://researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="contact-btn"><i class="fa-brands fa-researchgate"></i> ResearchGate[cite: 1]</a>
-                        <span class="contact-btn"><i class="fa-solid fa-phone"></i> (+98) 919-727-9867[cite: 1]</span>
+                        <a href="mailto:m.rameh@iasbs.ac.ir" class="contact-btn"><i class="fa-solid fa-envelope"></i> m.rameh@iasbs.ac.ir</a>[cite: 1]
+                        <a href="mailto:m.rameh98@gmail.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> m.rameh98@gmail.com</a>[cite: 1]
+                        <a href="https://linkedin.com/in/mahdi-rameh-19122319a/" target="_blank" rel="noopener" class="contact-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>[cite: 1]
+                        <a href="https://researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="contact-btn"><i class="fa-brands fa-researchgate"></i> ResearchGate</a>[cite: 1]
+                        <span class="contact-btn"><i class="fa-solid fa-phone"></i> (+98) 919-727-9867</span>[cite: 1]
                     </div>
                 </div>
             </div>
@@ -610,7 +659,7 @@
             </div>
         </section>
 
-        <!-- Honors & Awards (با عکس جایزه) -->
+        <!-- Honors & Awards -->
         <section id="awards">
             <h2 class="section-title"><i class="fa-solid fa-trophy"></i> Honors & Awards</h2>
             
@@ -625,7 +674,6 @@
                         <strong>Project:</strong> &ldquo;Design and Fabrication of an Acoustofluidic System for Non-Invasive Separation of Motile Cells&rdquo;[cite: 1]
                     </p>
                 </div>
-                <!-- بخش عکس مراسم جایزه -->
                 <div class="award-card-img">
                     <img src="award.jpg" alt="Festival Award Ceremony" onerror="this.src='https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=400&q=80'">
                 </div>
@@ -662,8 +710,8 @@
                 </div>
                 <div class="card-subtitle">Optical Tweezers Laboratory, IASBS[cite: 1]</div>
                 <ul>
-                    <li>Developed experimental setups integrating optical and acoustic tweezers for trapping micro-particles[cite: 1].</li>
-                    <li>Investigated interparticle acoustic radiation forces and pressure sub-node formation in fluidic media[cite: 1].</li>
+                    <li>Developed experimental setups integrating optical and acoustic tweezers for trapping micro-particles.[cite: 1]</li>
+                    <li>Investigated interparticle acoustic radiation forces and pressure sub-node formation in fluidic media.[cite: 1]</li>
                 </ul>
             </div>
 
@@ -674,8 +722,8 @@
                 </div>
                 <div class="card-subtitle">Fathoptics (PhyLabs), Zanjan, Iran[cite: 1]</div>
                 <ul>
-                    <li>Coordinated technical projects and team workflows in optical/technological development[cite: 1].</li>
-                    <li>Managed project milestones, resources, and cross-functional team execution[cite: 1].</li>
+                    <li>Coordinated technical projects and team workflows in optical/technological development.[cite: 1]</li>
+                    <li>Managed project milestones, resources, and cross-functional team execution.[cite: 1]</li>
                 </ul>
             </div>
 
@@ -686,7 +734,7 @@
                 </div>
                 <div class="card-subtitle">Department of Biological Sciences, IASBS[cite: 1]</div>
                 <ul>
-                    <li>Operated and maintained biological fluorescence microscopy systems for cross-disciplinary research projects[cite: 1].</li>
+                    <li>Operated and maintained biological fluorescence microscopy systems for cross-disciplinary research projects.[cite: 1]</li>
                 </ul>
             </div>
         </section>
@@ -699,10 +747,10 @@
                 <div class="card">
                     <div class="card-subtitle" style="margin-bottom: 0.75rem;">Graduate Teaching Assistant, IASBS[cite: 1]</div>
                     <ul>
-                        <li><strong>Electrodynamics II</strong> <span style="float: right; color: var(--text-muted); font-size: 0.85rem;">Winter 2022[cite: 1]</span></li>
-                        <li><strong>Electromagnetic Theory of Light I & II</strong> <span style="float: right; color: var(--text-muted); font-size: 0.85rem;">2022 &ndash; 2023[cite: 1]</span></li>
-                        <li><strong>Optics Laboratory & Photonic Lab II</strong> <span style="float: right; color: var(--text-muted); font-size: 0.85rem;">2022 &ndash; 2023[cite: 1]</span></li>
-                        <li><strong>Electromagnetism Laboratory</strong> <span style="float: right; color: var(--text-muted); font-size: 0.85rem;">Autumn 2023[cite: 1]</span></li>
+                        <li><strong>Electrodynamics II</strong> <span style="float: right; color: var(--text-muted); font-size: 0.85rem;">Winter 2022</span>[cite: 1]</li>
+                        <li><strong>Electromagnetic Theory of Light I & II</strong> <span style="float: right; color: var(--text-muted); font-size: 0.85rem;">2022 &ndash; 2023</span>[cite: 1]</li>
+                        <li><strong>Optics Laboratory & Photonic Lab II</strong> <span style="float: right; color: var(--text-muted); font-size: 0.85rem;">2022 &ndash; 2023</span>[cite: 1]</li>
+                        <li><strong>Electromagnetism Laboratory</strong> <span style="float: right; color: var(--text-muted); font-size: 0.85rem;">Autumn 2023</span>[cite: 1]</li>
                     </ul>
                 </div>
             </section>
@@ -805,31 +853,53 @@
             </div>
         </section>
 
-        <!-- References -->
+        <!-- Academic References با عکس و هوم‌پیج دانشگاهی اساتید -->
         <section id="references">
             <h2 class="section-title"><i class="fa-solid fa-user-tie"></i> Academic References</h2>
             <div class="two-col">
-                <div class="card">
-                    <div class="card-title">Dr. Faegheh Hajizadeh</div>
-                    <div class="card-subtitle">Associate Professor, Department of Physics, IASBS, Zanjan, Iran[cite: 1]</div>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">
-                        <i class="fa-solid fa-envelope" style="color: var(--accent);"></i> Email: <a href="mailto:hajizade@iasbs.ac.ir">hajizade@iasbs.ac.ir</a>[cite: 1]
-                    </p>
+                <!-- Dr. Hajizadeh -->
+                <div class="card ref-card">
+                    <div class="ref-avatar">
+                        <img src="https://iasbs.ac.ir/~hajizade/images/Hajizadeh.jpg" alt="Dr. Faegheh Hajizadeh" onerror="this.src='https://ui-avatars.com/api/?name=Faegheh+Hajizadeh&background=0f2b4c&color=fff&size=120'">
+                    </div>
+                    <div class="ref-info">
+                        <div class="card-title">Dr. Faegheh Hajizadeh</div>
+                        <div class="card-subtitle">Associate Professor, Department of Physics, IASBS[cite: 1]</div>
+                        <div class="pub-actions">
+                            <a href="mailto:hajizade@iasbs.ac.ir" class="action-link doi-btn">
+                                <i class="fa-solid fa-envelope"></i> Email[cite: 1]
+                            </a>
+                            <a href="https://iasbs.ac.ir/~hajizade/" target="_blank" rel="noopener" class="action-link web-btn">
+                                <i class="fa-solid fa-globe"></i> Homepage
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-title">Dr. Ehsan Ahadi Akhlaghi</div>
-                    <div class="card-subtitle">Associate Professor, Department of Physics, IASBS, Zanjan, Iran[cite: 1]</div>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">
-                        <i class="fa-solid fa-envelope" style="color: var(--accent);"></i> Email: <a href="mailto:e.a.akhlaghi@iasbs.ac.ir">e.a.akhlaghi@iasbs.ac.ir</a>[cite: 1]
-                    </p>
+                <!-- Dr. Akhlaghi -->
+                <div class="card ref-card">
+                    <div class="ref-avatar">
+                        <img src="https://iasbs.ac.ir/assets/files/content_files/photo_gallery/akhlaghi.jpg" alt="Dr. Ehsan Ahadi Akhlaghi" onerror="this.src='https://ui-avatars.com/api/?name=Ehsan+Akhlaghi&background=0f2b4c&color=fff&size=120'">
+                    </div>
+                    <div class="ref-info">
+                        <div class="card-title">Dr. Ehsan Ahadi Akhlaghi</div>
+                        <div class="card-subtitle">Associate Professor, Department of Physics, IASBS[cite: 1]</div>
+                        <div class="pub-actions">
+                            <a href="mailto:e.a.akhlaghi@iasbs.ac.ir" class="action-link doi-btn">
+                                <i class="fa-solid fa-envelope"></i> Email[cite: 1]
+                            </a>
+                            <a href="https://iasbs.ac.ir/personalpage?id=39001&staff=0" target="_blank" rel="noopener" class="action-link web-btn">
+                                <i class="fa-solid fa-globe"></i> Homepage
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Mahdi Rameh. All rights reserved. | Updated: August 2026[cite: 1]</p>
+            <p>&copy; 2026 Mahdi Rameh. All rights reserved. | Updated: August 2026</p>[cite: 1]
         </footer>
     </div>
 
