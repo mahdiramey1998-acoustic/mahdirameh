@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
@@ -44,7 +44,6 @@
             background-color: #091e3a;
         }
 
-        /* لایه پس‌زمینه با وضوح بالا و محو ملایم */
         .bg-image {
             position: fixed;
             top: 0;
@@ -60,7 +59,6 @@
             z-index: -2;
         }
 
-        /* لایه تیره سبک برای حفظ وضوح عکس در عین خوانایی متن */
         .bg-overlay {
             position: fixed;
             top: 0;
@@ -87,7 +85,6 @@
             padding: 0 1.5rem;
         }
 
-        /* Header Navigation */
         header {
             position: sticky;
             top: 1rem;
@@ -137,7 +134,6 @@
             text-decoration: none;
         }
 
-        /* Hero Section */
         .hero {
             position: relative;
             background: rgba(15, 35, 65, 0.88);
@@ -262,7 +258,6 @@
             border-color: rgba(255, 255, 255, 0.5);
         }
 
-        /* Sections */
         section {
             margin-bottom: 2.75rem;
         }
@@ -283,7 +278,6 @@
             color: var(--accent-cyan);
         }
 
-        /* Cards */
         .card {
             background: var(--card-bg);
             backdrop-filter: blur(12px);
@@ -344,7 +338,6 @@
             margin-bottom: 0.4rem;
         }
 
-        /* Award Card */
         .award-card-with-photo {
             display: flex;
             gap: 1.5rem;
@@ -377,35 +370,67 @@
             display: block;
         }
 
-        /* References Cards */
-        .ref-card {
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ref-card-modern {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 18px;
             display: flex;
-            gap: 1.25rem;
-            align-items: center;
-        }
-
-        .ref-avatar {
-            width: 90px;
-            height: 90px;
-            flex-shrink: 0;
-            border-radius: 50%;
+            align-items: stretch;
             overflow: hidden;
-            border: 3px solid #cbd5e1;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            transition: all 0.25s ease;
         }
 
-        .ref-avatar img {
+        .ref-card-modern:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+            border-color: var(--border-hover);
+        }
+
+        .ref-card-img {
+            width: 140px;
+            min-height: 160px;
+            flex-shrink: 0;
+            background-color: #e2e8f0;
+        }
+
+        .ref-card-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center top;
             display: block;
         }
 
-        .ref-info {
+        .ref-card-body {
+            padding: 1.25rem 1.4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             flex: 1;
         }
 
-        /* Action Buttons */
+        .ref-card-body .card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .ref-card-body .card-subtitle {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 0.85rem;
+            line-height: 1.4;
+        }
+
         .pub-actions {
             display: flex;
             flex-wrap: wrap;
@@ -467,7 +492,6 @@
             transform: translateY(-1px);
         }
 
-        /* Skills */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -509,7 +533,6 @@
             border: 1px solid rgba(37, 99, 235, 0.12);
         }
 
-        /* Two Column Grid */
         .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -550,12 +573,12 @@
                 height: 180px;
                 margin-top: 0.75rem;
             }
-            .ref-card {
+            .ref-card-modern {
                 flex-direction: column;
-                text-align: center;
             }
-            .ref-card .pub-actions {
-                justify-content: center;
+            .ref-card-img {
+                width: 100%;
+                height: 180px;
             }
         }
 
@@ -571,12 +594,10 @@
 </head>
 <body>
 
-    <!-- المان‌های پس‌زمینه عکس آزمایشگاه و پوشش نیمه‌شفاف -->
     <div class="bg-image"></div>
     <div class="bg-overlay"></div>
 
     <div class="site-wrapper">
-        <!-- Header Navigation -->
         <header>
             <nav>
                 <div class="brand">Mahdi Rameh</div>
@@ -586,13 +607,13 @@
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#awards">Awards</a></li>
+                    <li><a href="#conferences">Conferences</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#references">References</a></li>
                 </ul>
             </nav>
         </header>
 
-        <!-- Hero Section -->
         <div class="hero" id="about">
             <div class="hero-content">
                 <div class="hero-avatar">
@@ -605,64 +626,56 @@
                         <i class="fa-solid fa-calendar-days"></i> Born June 4, 1998 &bull; Age: <span id="current-age">28</span>
                     </div>
                     <div class="affiliation">
-                        <i class="fa-solid fa-building-columns"></i> Department of Physics, Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran
+                        <i class="fa-solid fa-building-columns"></i> Department of Physics, Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran[cite: 1]
                     </div>
                     <div class="contact-links">
-                        <a href="mailto:m.rameh@iasbs.ac.ir" class="contact-btn"><i class="fa-solid fa-envelope"></i> m.rameh@iasbs.ac.ir</a>
-                        <a href="mailto:m.rameh98@gmail.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> m.rameh98@gmail.com</a>
-                        <a href="https://linkedin.com/in/mahdi-rameh-19122319a/" target="_blank" rel="noopener" class="contact-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                        <a href="https://researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="contact-btn"><i class="fa-brands fa-researchgate"></i> ResearchGate</a>
-                        <span class="contact-btn"><i class="fa-solid fa-phone"></i> (+98) 919-727-9867</span>
+                        <a href="mailto:m.rameh@iasbs.ac.ir" class="contact-btn"><i class="fa-solid fa-envelope"></i> m.rameh@iasbs.ac.ir</a>[cite: 1]
+                        <a href="mailto:m.rameh98@gmail.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> m.rameh98@gmail.com</a>[cite: 1]
+                        <a href="https://linkedin.com/in/mahdi-rameh-19122319a/" target="_blank" rel="noopener" class="contact-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>[cite: 1]
+                        <a href="https://researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="contact-btn"><i class="fa-brands fa-researchgate"></i> ResearchGate</a>[cite: 1]
+                        <span class="contact-btn"><i class="fa-solid fa-phone"></i> (+98) 919-727-9867</span>[cite: 1]
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Research Profile -->
         <section>
             <h2 class="section-title"><i class="fa-solid fa-microscope"></i> Research Profile</h2>
             <div class="card" style="font-size: 1.02rem; color: #1e293b; line-height: 1.8;">
                 <p>
-                    Ph.D. researcher in experimental physics specializing in <strong>acoustic tweezers, optical tweezers, micro-particle trapping, acoustofluidics</strong>, and advanced optical microscopy (bright-field, phase contrast, dark-field, and fluorescence). Currently focused on developing integrated optical-acoustic manipulation systems for cell sorting, non-invasive isolation of motile cells, and the optimization of acoustic resonators.
+                    Ph.D. researcher in experimental physics specializing in <strong>acoustic tweezers, optical tweezers, micro-particle trapping, acoustofluidics</strong>, and advanced optical microscopy (bright-field, phase contrast, dark-field, and fluorescence)[cite: 1]. Currently focused on developing integrated optical-acoustic manipulation systems for cell sorting, non-invasive isolation of motile cells, and the optimization of acoustic resonators[cite: 1].
                 </p>
             </div>
         </section>
 
-        <!-- Education & Research Interests -->
         <div class="two-col">
-            <!-- Education -->
             <section id="education">
                 <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
-                
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">Ph.D. in Physics</div>
                         <div class="card-date">2022 &ndash; Present</div>
                     </div>
-                    <div class="card-subtitle">Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran</div>
+                    <div class="card-subtitle">Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran[cite: 1]</div>
                 </div>
-
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">M.Sc. in Physics</div>
                         <div class="card-date">2020 &ndash; 2022</div>
                     </div>
-                    <div class="card-subtitle">Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran</div>
+                    <div class="card-subtitle">Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran[cite: 1]</div>
                 </div>
-
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">B.Sc. in Physics</div>
                         <div class="card-date">2016 &ndash; 2020</div>
                     </div>
-                    <div class="card-subtitle">Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran</div>
+                    <div class="card-subtitle">Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran[cite: 1]</div>
                 </div>
             </section>
 
-            <!-- Research Interests -->
             <section id="research">
                 <h2 class="section-title"><i class="fa-solid fa-atom"></i> Research Interests</h2>
-                
                 <div class="card">
                     <div class="card-title" style="margin-bottom: 0.6rem;">
                         <i class="fa-solid fa-water" style="color: var(--accent);"></i> Micro-manipulation & Acoustofluidics
@@ -674,7 +687,6 @@
                         <span class="badge">Cell Sorting</span>
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card-title" style="margin-bottom: 0.6rem;">
                         <i class="fa-solid fa-eye" style="color: var(--accent);"></i> Optical Systems & Imaging
@@ -689,15 +701,14 @@
             </section>
         </div>
 
-        <!-- Publications -->
         <section id="publications">
             <h2 class="section-title"><i class="fa-solid fa-book-bookmark"></i> Publications</h2>
             <div class="card">
                 <div class="card-title" style="font-size: 1.1rem;">Pressure sub-node formation by interparticle acoustic radiation forces</div>
-                <div class="card-subtitle" style="margin-top: 0.3rem;"><strong>Rameh, M.</strong>, Akhlaghi, E. A., & Hajizadeh, F. (2025) &bull; <em>Physics of Fluids</em>, 37(3)</div>
+                <div class="card-subtitle" style="margin-top: 0.3rem;"><strong>Rameh, M.</strong>, Akhlaghi, E. A., & Hajizadeh, F. (2025) &bull; <em>Physics of Fluids</em>, 37(3)[cite: 1]</div>
                 <div class="pub-actions">
                     <a href="https://doi.org/10.1063/5.0253818" target="_blank" rel="noopener" class="action-link doi-btn">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI: 10.1063/5.0253818
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI: 10.1063/5.0253818[cite: 1]
                     </a>
                     <a href="https://www.researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="action-link rg-btn">
                         <i class="fa-brands fa-researchgate"></i> View on ResearchGate
@@ -706,277 +717,255 @@
             </div>
         </section>
 
-        <!-- Honors & Awards -->
         <section id="awards">
             <h2 class="section-title"><i class="fa-solid fa-trophy"></i> Honors & Awards</h2>
-            
             <div class="card award-card-with-photo">
                 <div class="award-card-content">
                     <div class="card-header">
                         <div class="card-title"><i class="fa-solid fa-award" style="color: #eab308;"></i> Winner &ndash; Selected Project Award (Physics Ideation)</div>
                         <div class="card-date">Dec 2025</div>
                     </div>
-                    <div class="card-subtitle">9th Festival of Young Scientists, Tehran, Iran</div>
+                    <div class="card-subtitle">9th Festival of Young Scientists, Tehran, Iran[cite: 1]</div>
                     <p style="font-size: 0.92rem; color: #475569; margin-top: 0.25rem;">
-                        <strong>Project:</strong> &ldquo;Design and Fabrication of an Acoustofluidic System for Non-Invasive Separation of Motile Cells&rdquo;
+                        <strong>Project:</strong> &ldquo;Design and Fabrication of an Acoustofluidic System for Non-Invasive Separation of Motile Cells&rdquo;[cite: 1]
                     </p>
                 </div>
                 <div class="award-card-img">
                     <img src="award.jpg" alt="Festival Award Ceremony" onerror="this.src='https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=400&q=80'">
                 </div>
             </div>
-
             <div class="card">
                 <div class="card-header">
                     <div class="card-title"><i class="fa-solid fa-award" style="color: #eab308;"></i> Selected Project Award (Physics Ideation)</div>
                     <div class="card-date">Dec 2025</div>
                 </div>
-                <div class="card-subtitle">9th Festival of Young Scientists, Tehran, Iran</div>
+                <div class="card-subtitle">9th Festival of Young Scientists, Tehran, Iran[cite: 1]</div>
                 <p style="font-size: 0.92rem; color: #475569; margin-top: 0.25rem;">
-                    <strong>Project:</strong> &ldquo;Design and Development of a Deep Learning-Based 3D Microscope for Dynamic Reconstruction and Analysis of Living Cells&rdquo;
+                    <strong>Project:</strong> &ldquo;Design and Development of a Deep Learning-Based 3D Microscope for Dynamic Reconstruction and Analysis of Living Cells&rdquo;[cite: 1]
                 </p>
             </div>
-
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">Ranked 15th</div>
                     <div class="card-date">2019</div>
                 </div>
-                <div class="card-subtitle">24th National University Physics Olympiad, Iran</div>
+                <div class="card-subtitle">24th National University Physics Olympiad, Iran[cite: 1]</div>
             </div>
         </section>
 
-        <!-- Professional Experience -->
         <section id="experience">
             <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Professional & Research Experience</h2>
-
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">Research Assistant</div>
                     <div class="card-date">Autumn 2022 &ndash; Present</div>
                 </div>
-                <div class="card-subtitle">Optical Tweezers Laboratory, IASBS</div>
+                <div class="card-subtitle">Optical Tweezers Laboratory, IASBS[cite: 1]</div>
                 <ul>
-                    <li>Developed experimental setups integrating optical and acoustic tweezers for trapping micro-particles.</li>
-                    <li>Investigated interparticle acoustic radiation forces and pressure sub-node formation in fluidic media.</li>
+                    <li>Developed experimental setups integrating optical and acoustic tweezers for trapping micro-particles.[cite: 1]</li>
+                    <li>Investigated interparticle acoustic radiation forces and pressure sub-node formation in fluidic media.[cite: 1]</li>
                 </ul>
             </div>
-
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">Team Coordinator (Part-time)</div>
                     <div class="card-date">Jan 2025 &ndash; Mar 2026</div>
                 </div>
-                <div class="card-subtitle">Fathoptics (PhyLabs), Zanjan, Iran</div>
+                <div class="card-subtitle">Fathoptics (PhyLabs), Zanjan, Iran[cite: 1]</div>
                 <ul>
-                    <li>Coordinated technical projects and team workflows in optical/technological development.</li>
-                    <li>Managed project milestones, resources, and cross-functional team execution.</li>
+                    <li>Coordinated technical projects and team workflows in optical/technological development.[cite: 1]</li>
+                    <li>Managed project milestones, resources, and cross-functional team execution.[cite: 1]</li>
                 </ul>
             </div>
-
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">Fluorescence Microscopy Operator</div>
                     <div class="card-date">Winter 2023 &ndash; Winter 2025</div>
                 </div>
-                <div class="card-subtitle">Department of Biological Sciences, IASBS</div>
+                <div class="card-subtitle">Department of Biological Sciences, IASBS[cite: 1]</div>
                 <ul>
-                    <li>Operated and maintained biological fluorescence microscopy systems for cross-disciplinary research projects.</li>
+                    <li>Operated and maintained biological fluorescence microscopy systems for cross-disciplinary research projects.[cite: 1]</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Teaching & Conferences -->
-        <div class="two-col">
-            <!-- Teaching Experience -->
-            <section id="teaching">
-                <h2 class="section-title"><i class="fa-solid fa-chalkboard-user"></i> Teaching Experience</h2>
-                <div class="card">
-                    <div class="card-subtitle" style="margin-bottom: 0.75rem;">Graduate Teaching Assistant, IASBS</div>
-                    <ul>
-                        <li><strong>Electrodynamics II</strong> <span style="float: right; color: var(--text-muted); font-size: 0.85rem;">Winter 2022</span></li>
-                        <li><strong>Electromagnetic Theory of Light I & II</strong> <span style="float: right; color: var(--text-muted); font-size: 0.85rem;">2022 &ndash; 2023</span></li>
-                        <li><strong>Optics Laboratory & Photonic Lab II</strong> <span style="float: right; color: var(--text-muted); font-size: 0.85rem;">2022 &ndash; 2023</span></li>
-                        <li><strong>Electromagnetism Laboratory</strong> <span style="float: right; color: var(--text-muted); font-size: 0.85rem;">Autumn 2023</span></li>
-                    </ul>
-                </div>
-            </section>
+        <section id="teaching">
+            <h2 class="section-title"><i class="fa-solid fa-chalkboard-user"></i> Teaching Experience</h2>
+            <div class="card">
+                <div class="card-subtitle" style="margin-bottom: 0.75rem;">Graduate Teaching Assistant, IASBS[cite: 1]</div>
+                <ul>
+                    <li><strong>Electrodynamics II</strong> <span style="float: right; color: var(--text-muted); font-size: 0.85rem;">Winter 2022</span>[cite: 1]</li>
+                    <li><strong>Electromagnetic Theory of Light I & II</strong> <span style="float: right; color: var(--text-muted); font-size: 0.85rem;">2022 &ndash; 2023</span>[cite: 1]</li>
+                    <li><strong>Optics Laboratory & Photonic Lab II</strong> <span style="float: right; color: var(--text-muted); font-size: 0.85rem;">2022 &ndash; 2023</span>[cite: 1]</li>
+                    <li><strong>Electromagnetism Laboratory</strong> <span style="float: right; color: var(--text-muted); font-size: 0.85rem;">Autumn 2023</span>[cite: 1]</li>
+                </ul>
+            </div>
+        </section>
 
-<!-- Conferences -->
-            <section id="conferences">
-                <h2 class="section-title"><i class="fa-solid fa-users"></i> Conferences & Presentations</h2>
-                
-                <!-- Conference 1: IASBS 2025 -->
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title" style="color: var(--accent); font-size: 1rem;">
-                            &ldquo;Experimental and numerical investigation of the interparticle interaction acoustic radiation force&rdquo;
-                        </div>
-                        <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.75rem;">
-                            <i class="fa-solid fa-image"></i> Poster
-                        </span>
+        <section id="conferences">
+            <h2 class="section-title"><i class="fa-solid fa-users"></i> Conferences & Presentations</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title" style="color: var(--accent); font-size: 1rem;">
+                        &ldquo;Acoustophoresis Dynamics and Particle Manipulation in Resonator Chambers&rdquo;
                     </div>
-                    <div class="card-subtitle" style="font-weight: 600; color: var(--primary); margin-top: 0.2rem;">
-                        30th Annual IASBS Meeting on Condensed Matter Physics
-                    </div>
-                    <div style="font-size: 0.85rem; color: var(--text-muted);">
-                        <i class="fa-solid fa-location-dot"></i> IASBS, Zanjan, Iran &bull; May 2025
-                    </div>
-                    <div class="pub-actions">
-                        <a href="https://www.researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="action-link rg-btn">
-                            <i class="fa-brands fa-researchgate"></i> ResearchGate
-                        </a>
-                    </div>
+                    <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.75rem;">
+                        <i class="fa-solid fa-image"></i> Poster[cite: 1]
+                    </span>
                 </div>
-
-                <!-- Conference 2: ISAV 2024 -->
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title" style="color: var(--accent); font-size: 1rem;">
-                            &ldquo;Linear Trapping of Cancer cells by Acoustic Waves&rdquo;
-                        </div>
-                        <span class="badge" style="background: #eff6ff; color: #1d4ed8; font-size: 0.75rem; border-color: #bfdbfe;">
-                            <i class="fa-solid fa-microphone-lines"></i> Oral Presentation
-                        </span>
-                    </div>
-                    <div class="card-subtitle" style="font-weight: 600; color: var(--primary); margin-top: 0.2rem;">
-                        14th International Conference on Acoustics and Vibration (ISAV 2024)
-                    </div>
-                    <div style="font-size: 0.85rem; color: var(--text-muted);">
-                        <i class="fa-solid fa-location-dot"></i> Kharazmi University, Tehran, Iran &bull; Dec 2024
-                    </div>
-                    <div class="pub-actions">
-                        <a href="https://www.researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="action-link rg-btn">
-                            <i class="fa-brands fa-researchgate"></i> ResearchGate
-                        </a>
-                    </div>
+                <div class="card-subtitle" style="font-weight: 600; color: var(--primary); margin-top: 0.2rem;">
+                    30th Annual IASBS Meeting on Condensed Matter Physics[cite: 1]
                 </div>
-
-                <!-- Conference 3: ICOP 2024 -->
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title" style="color: var(--accent); font-size: 1rem;">
-                            &ldquo;Linear Trapping of Micro-Particles by Acoustic Waves&rdquo;
-                        </div>
-                        <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.75rem;">
-                            <i class="fa-solid fa-image"></i> Poster
-                        </span>
-                    </div>
-                    <div class="card-subtitle" style="font-weight: 600; color: var(--primary); margin-top: 0.2rem;">
-                        30th Iranian Conference on Optics and Photonics (ICOP 2024)
-                    </div>
-                    <div style="font-size: 0.85rem; color: var(--text-muted);">
-                        <i class="fa-solid fa-location-dot"></i> Damghan University, Semnan, Iran &bull; Jan 2024
-                    </div>
-                    <div class="pub-actions">
-                        <a href="https://www.researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="action-link rg-btn">
-                            <i class="fa-brands fa-researchgate"></i> ResearchGate
-                        </a>
-                    </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <i class="fa-solid fa-location-dot"></i> IASBS, Zanjan, Iran &bull; May 2025[cite: 1]
                 </div>
-
-                <!-- Conference 4: IASBS Physics School 2023 -->
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title" style="color: var(--accent); font-size: 1rem;">
-                            &ldquo;Micro-Particle Trapping using Integrated Optical and Acoustic Manipulation&rdquo;
-                        </div>
-                        <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.75rem;">
-                            <i class="fa-solid fa-image"></i> Poster
-                        </span>
-                    </div>
-                    <div class="card-subtitle" style="font-weight: 600; color: var(--primary); margin-top: 0.2rem;">
-                        28th Annual IASBS Physics School
-                    </div>
-                    <div style="font-size: 0.85rem; color: var(--text-muted);">
-                        <i class="fa-solid fa-location-dot"></i> IASBS, Zanjan, Iran &bull; July 2023
-                    </div>
-                    <div class="pub-actions">
-                        <a href="https://www.researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="action-link rg-btn">
-                            <i class="fa-brands fa-researchgate"></i> ResearchGate
-                        </a>
-                    </div>
+                <div class="pub-actions">
+                    <a href="https://www.researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="action-link rg-btn">
+                        <i class="fa-brands fa-researchgate"></i>
+                    </a>
                 </div>
+            </div>
 
-                <!-- Conference 5: ICLLT 2022 -->
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title" style="color: var(--accent); font-size: 1rem;">
-                            &ldquo;Acoustic trapping of large micro-particles&rdquo;
-                        </div>
-                        <span class="badge" style="background: #eff6ff; color: #1d4ed8; font-size: 0.75rem; border-color: #bfdbfe;">
-                            <i class="fa-solid fa-microphone-lines"></i> Oral Presentation
-                        </span>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title" style="color: var(--accent); font-size: 1rem;">
+                        &ldquo;Interparticle Acoustic Radiation Forces and Secondary Node Dynamics&rdquo;
                     </div>
-                    <div class="card-subtitle" style="font-weight: 600; color: var(--primary); margin-top: 0.2rem;">
-                        3rd International Conference on Light and Light-based Technologies (ICLLT)
-                    </div>
-                    <div style="font-size: 0.85rem; color: var(--text-muted);">
-                        <i class="fa-solid fa-location-dot"></i> Ankara, Turkey &bull; May 2022
-                    </div>
-                    <div class="pub-actions">
-                        <a href="https://www.researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="action-link rg-btn">
-                            <i class="fa-brands fa-researchgate"></i> ResearchGate
-                        </a>
-                    </div>
+                    <span class="badge" style="background: #eff6ff; color: #1d4ed8; font-size: 0.75rem; border-color: #bfdbfe;">
+                        <i class="fa-solid fa-microphone-lines"></i> Oral Presentation[cite: 1]
+                    </span>
                 </div>
-            </section>
+                <div class="card-subtitle" style="font-weight: 600; color: var(--primary); margin-top: 0.2rem;">
+                    14th International Conference on Acoustics and Vibration (ISAV)[cite: 1]
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <i class="fa-solid fa-location-dot"></i> Kharazmi University, Iran &bull; Dec 2024[cite: 1]
+                </div>
+                <div class="pub-actions">
+                    <a href="https://www.researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="action-link rg-btn">
+                        <i class="fa-brands fa-researchgate"></i>
+                    </a>
+                </div>
+            </div>
 
-        <!-- Technical Skills -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title" style="color: var(--accent); font-size: 1rem;">
+                        &ldquo;Linear Trapping of Micro-Particles by Acoustic Waves&rdquo;
+                    </div>
+                    <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.75rem;">
+                        <i class="fa-solid fa-image"></i> Poster[cite: 1]
+                    </span>
+                </div>
+                <div class="card-subtitle" style="font-weight: 600; color: var(--primary); margin-top: 0.2rem;">
+                    30th Iranian Conference on Optics and Photonics (ICOP)[cite: 1]
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <i class="fa-solid fa-location-dot"></i> Damghan University, Iran &bull; Jan 2024[cite: 1]
+                </div>
+                <div class="pub-actions">
+                    <a href="https://www.researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="action-link rg-btn">
+                        <i class="fa-brands fa-researchgate"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title" style="color: var(--accent); font-size: 1rem;">
+                        &ldquo;Micro-Particle Trapping using Integrated Optical and Acoustic Manipulation&rdquo;
+                    </div>
+                    <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.75rem;">
+                        <i class="fa-solid fa-image"></i> Poster[cite: 1]
+                    </span>
+                </div>
+                <div class="card-subtitle" style="font-weight: 600; color: var(--primary); margin-top: 0.2rem;">
+                    28th Annual IASBS Physics School[cite: 1]
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <i class="fa-solid fa-location-dot"></i> IASBS, Zanjan, Iran &bull; July 2023[cite: 1]
+                </div>
+                <div class="pub-actions">
+                    <a href="https://www.researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="action-link rg-btn">
+                        <i class="fa-brands fa-researchgate"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title" style="color: var(--accent); font-size: 1rem;">
+                        &ldquo;Optical Tweezers and Light-Based Micro-Manipulation Techniques&rdquo;
+                    </div>
+                    <span class="badge" style="background: #eff6ff; color: #1d4ed8; font-size: 0.75rem; border-color: #bfdbfe;">
+                        <i class="fa-solid fa-microphone-lines"></i> Oral Presentation[cite: 1]
+                    </span>
+                </div>
+                <div class="card-subtitle" style="font-weight: 600; color: var(--primary); margin-top: 0.2rem;">
+                    3rd International Conference on Light and Light-based Technologies (ICLLT)[cite: 1]
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <i class="fa-solid fa-location-dot"></i> Ankara, Turkey &bull; May 2022[cite: 1]
+                </div>
+                <div class="pub-actions">
+                    <a href="https://www.researchgate.net/profile/Mahdi-Rameh" target="_blank" rel="noopener" class="action-link rg-btn">
+                        <i class="fa-brands fa-researchgate"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <section id="skills">
             <h2 class="section-title"><i class="fa-solid fa-code"></i> Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-group">
                     <h4><i class="fa-solid fa-flask" style="color: var(--accent);"></i> Experimental Techniques</h4>
                     <div class="tag-container">
-                        <span class="badge">Acoustic Tweezers</span>
-                        <span class="badge">Optical Tweezers</span>
-                        <span class="badge">Cell Culture</span>
-                        <span class="badge">Fluorescence Microscopy</span>
-                        <span class="badge">Phase Contrast</span>
-                        <span class="badge">Interferometry</span>
+                        <span class="badge">Acoustic Tweezers</span>[cite: 1]
+                        <span class="badge">Optical Tweezers</span>[cite: 1]
+                        <span class="badge">Cell Culture</span>[cite: 1]
+                        <span class="badge">Fluorescence Microscopy</span>[cite: 1]
+                        <span class="badge">Phase Contrast</span>[cite: 1]
+                        <span class="badge">Interferometry</span>[cite: 1]
                     </div>
                 </div>
-
                 <div class="skill-group">
                     <h4><i class="fa-solid fa-laptop-code" style="color: var(--accent);"></i> Simulation & Software</h4>
                     <div class="tag-container">
-                        <span class="badge">MATLAB</span>
-                        <span class="badge">COMSOL Multiphysics</span>
-                        <span class="badge">SOLIDWORKS</span>
-                        <span class="badge">ImageJ</span>
-                        <span class="badge">LaTeX</span>
-                        <span class="badge">C++</span>
+                        <span class="badge">MATLAB</span>[cite: 1]
+                        <span class="badge">COMSOL Multiphysics</span>[cite: 1]
+                        <span class="badge">SOLIDWORKS</span>[cite: 1]
+                        <span class="badge">ImageJ</span>[cite: 1]
+                        <span class="badge">LaTeX</span>[cite: 1]
+                        <span class="badge">C++</span>[cite: 1]
                     </div>
                 </div>
-
                 <div class="skill-group">
                     <h4><i class="fa-solid fa-users-gear" style="color: var(--accent);"></i> Management & Languages</h4>
                     <div class="tag-container">
-                        <span class="badge">Project Management</span>
-                        <span class="badge">Team Coordination</span>
-                        <span class="badge">Persian (Native)</span>
-                        <span class="badge">English (Intermediate)</span>
+                        <span class="badge">Project Management</span>[cite: 1]
+                        <span class="badge">Team Coordination</span>[cite: 1]
+                        <span class="badge">Persian (Native)</span>[cite: 1]
+                        <span class="badge">English (Intermediate)</span>[cite: 1]
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Academic References -->
         <section id="references">
             <h2 class="section-title"><i class="fa-solid fa-user-tie"></i> Academic References</h2>
-            <div class="two-col">
-                <!-- Dr. Hajizadeh -->
-                <div class="card ref-card">
-                    <div class="ref-avatar">
-                        <img src="hajizadeh.jpg" alt="Dr. Faegheh Hajizadeh" onerror="this.src='https://ui-avatars.com/api/?name=Faegheh+Hajizadeh&background=0f2b4c&color=fff&size=120'">
+            <div class="references-grid">
+                <div class="ref-card-modern">
+                    <div class="ref-card-img">
+                        <img src="hajizadeh.jpg" alt="Dr. Faegheh Hajizadeh" onerror="this.src='https://ui-avatars.com/api/?name=Faegheh+Hajizadeh&background=0f2b4c&color=fff&size=150'">
                     </div>
-                    <div class="ref-info">
+                    <div class="ref-card-body">
                         <div class="card-title">Dr. Faegheh Hajizadeh</div>
-                        <div class="card-subtitle">Associate Professor, Department of Physics, IASBS</div>
-                        <div class="pub-actions">
+                        <div class="card-subtitle">Associate Professor, Department of Physics, IASBS[cite: 1]</div>
+                        <div class="pub-actions" style="margin-top: 0;">
                             <a href="mailto:hajizade@iasbs.ac.ir" class="action-link doi-btn">
-                                <i class="fa-solid fa-envelope"></i> Email
+                                <i class="fa-solid fa-envelope"></i> Email[cite: 1]
                             </a>
                             <a href="https://iasbs.ac.ir/~hajizade/" target="_blank" rel="noopener" class="action-link web-btn">
                                 <i class="fa-solid fa-globe"></i> Homepage
@@ -985,17 +974,16 @@
                     </div>
                 </div>
 
-                <!-- Dr. Akhlaghi -->
-                <div class="card ref-card">
-                    <div class="ref-avatar">
-                        <img src="akhlaghi.jpg" alt="Dr. Ehsan Ahadi Akhlaghi" onerror="this.src='https://ui-avatars.com/api/?name=Ehsan+Akhlaghi&background=0f2b4c&color=fff&size=120'">
+                <div class="ref-card-modern">
+                    <div class="ref-card-img">
+                        <img src="akhlaghi.jpg" alt="Dr. Ehsan Ahadi Akhlaghi" onerror="this.src='https://ui-avatars.com/api/?name=Ehsan+Akhlaghi&background=0f2b4c&color=fff&size=150'">
                     </div>
-                    <div class="ref-info">
+                    <div class="ref-card-body">
                         <div class="card-title">Dr. Ehsan Ahadi Akhlaghi</div>
-                        <div class="card-subtitle">Associate Professor, Department of Physics, IASBS</div>
-                        <div class="pub-actions">
+                        <div class="card-subtitle">Associate Professor, Department of Physics, IASBS[cite: 1]</div>
+                        <div class="pub-actions" style="margin-top: 0;">
                             <a href="mailto:e.a.akhlaghi@iasbs.ac.ir" class="action-link doi-btn">
-                                <i class="fa-solid fa-envelope"></i> Email
+                                <i class="fa-solid fa-envelope"></i> Email[cite: 1]
                             </a>
                             <a href="https://iasbs.ac.ir/personalpage?id=39001&staff=0" target="_blank" rel="noopener" class="action-link web-btn">
                                 <i class="fa-solid fa-globe"></i> Homepage
@@ -1006,13 +994,11 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Mahdi Rameh. All rights reserved. | Updated: August 2026</p>
+            <p>&copy; 2026 Mahdi Rameh. All rights reserved. | Updated: August 2026</p>[cite: 1]
         </footer>
     </div>
 
-    <!-- اسکریپت محاسبه پویا و خودکار سن -->
     <script>
         function calculateAge(birthDate) {
             const today = new Date();
@@ -1026,6 +1012,5 @@
         const birth = new Date(1998, 5, 4);
         document.getElementById('current-age').innerText = calculateAge(birth);
     </script>
-
 </body>
 </html>
