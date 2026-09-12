@@ -177,24 +177,36 @@
         .hero h1 {
             font-size: 2.3rem;
             font-weight: 800;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
             letter-spacing: -0.5px;
         }
 
         .hero .subtitle {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #93c5fd;
             font-weight: 500;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.4rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
+        .hero .birth-info {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            margin-bottom: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.2rem 0.65rem;
+            border-radius: 20px;
+        }
+
         .hero .affiliation {
             font-size: 0.92rem;
             color: #cbd5e1;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         .contact-links {
@@ -306,7 +318,7 @@
             margin-bottom: 0.4rem;
         }
 
-        /* بخش جایزه همراه با عکس */
+        /* Award Card */
         .award-card-with-photo {
             display: flex;
             gap: 1.5rem;
@@ -339,7 +351,7 @@
             display: block;
         }
 
-        /* کارت‌های اساتید و معرفین */
+        /* References Cards */
         .ref-card {
             display: flex;
             gap: 1.25rem;
@@ -347,8 +359,8 @@
         }
 
         .ref-avatar {
-            width: 85px;
-            height: 85px;
+            width: 90px;
+            height: 90px;
             flex-shrink: 0;
             border-radius: 50%;
             overflow: hidden;
@@ -469,7 +481,7 @@
             border: 1px solid rgba(37, 99, 235, 0.12);
         }
 
-        /* دو ستونه */
+        /* Grid */
         .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -557,6 +569,9 @@
                 <div class="hero-text">
                     <h1>Mahdi Rameh</h1>
                     <div class="subtitle"><i class="fa-solid fa-water"></i> Ph.D. Candidate in Physics &bull; Optical & Acoustic Manipulation</div>
+                    <div class="birth-info">
+                        <i class="fa-solid fa-calendar-days"></i> Born June 4, 1998 &bull; Age: <span id="current-age">28</span>[cite: 1]
+                    </div>
                     <div class="affiliation">
                         <i class="fa-solid fa-building-columns"></i> Department of Physics, Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran[cite: 1]
                     </div>
@@ -710,8 +725,8 @@
                 </div>
                 <div class="card-subtitle">Optical Tweezers Laboratory, IASBS[cite: 1]</div>
                 <ul>
-                    <li>Developed experimental setups integrating optical and acoustic tweezers for trapping micro-particles.[cite: 1]</li>
-                    <li>Investigated interparticle acoustic radiation forces and pressure sub-node formation in fluidic media.[cite: 1]</li>
+                    <li>Developed experimental setups integrating optical and acoustic tweezers for trapping micro-particles[cite: 1].</li>
+                    <li>Investigated interparticle acoustic radiation forces and pressure sub-node formation in fluidic media[cite: 1].</li>
                 </ul>
             </div>
 
@@ -722,8 +737,8 @@
                 </div>
                 <div class="card-subtitle">Fathoptics (PhyLabs), Zanjan, Iran[cite: 1]</div>
                 <ul>
-                    <li>Coordinated technical projects and team workflows in optical/technological development.[cite: 1]</li>
-                    <li>Managed project milestones, resources, and cross-functional team execution.[cite: 1]</li>
+                    <li>Coordinated technical projects and team workflows in optical/technological development[cite: 1].</li>
+                    <li>Managed project milestones, resources, and cross-functional team execution[cite: 1].</li>
                 </ul>
             </div>
 
@@ -734,7 +749,7 @@
                 </div>
                 <div class="card-subtitle">Department of Biological Sciences, IASBS[cite: 1]</div>
                 <ul>
-                    <li>Operated and maintained biological fluorescence microscopy systems for cross-disciplinary research projects.[cite: 1]</li>
+                    <li>Operated and maintained biological fluorescence microscopy systems for cross-disciplinary research projects[cite: 1].</li>
                 </ul>
             </div>
         </section>
@@ -853,14 +868,14 @@
             </div>
         </section>
 
-        <!-- Academic References با عکس و هوم‌پیج دانشگاهی اساتید -->
+        <!-- Academic References -->
         <section id="references">
             <h2 class="section-title"><i class="fa-solid fa-user-tie"></i> Academic References</h2>
             <div class="two-col">
                 <!-- Dr. Hajizadeh -->
                 <div class="card ref-card">
                     <div class="ref-avatar">
-                        <img src="https://iasbs.ac.ir/~hajizade/images/Hajizadeh.jpg" alt="Dr. Faegheh Hajizadeh" onerror="this.src='https://ui-avatars.com/api/?name=Faegheh+Hajizadeh&background=0f2b4c&color=fff&size=120'">
+                        <img src="hajizadeh.jpg" alt="Dr. Faegheh Hajizadeh" onerror="this.src='https://ui-avatars.com/api/?name=Faegheh+Hajizadeh&background=0f2b4c&color=fff&size=120'">
                     </div>
                     <div class="ref-info">
                         <div class="card-title">Dr. Faegheh Hajizadeh</div>
@@ -879,7 +894,7 @@
                 <!-- Dr. Akhlaghi -->
                 <div class="card ref-card">
                     <div class="ref-avatar">
-                        <img src="https://iasbs.ac.ir/assets/files/content_files/photo_gallery/akhlaghi.jpg" alt="Dr. Ehsan Ahadi Akhlaghi" onerror="this.src='https://ui-avatars.com/api/?name=Ehsan+Akhlaghi&background=0f2b4c&color=fff&size=120'">
+                        <img src="akhlaghi.jpg" alt="Dr. Ehsan Ahadi Akhlaghi" onerror="this.src='https://ui-avatars.com/api/?name=Ehsan+Akhlaghi&background=0f2b4c&color=fff&size=120'">
                     </div>
                     <div class="ref-info">
                         <div class="card-title">Dr. Ehsan Ahadi Akhlaghi</div>
@@ -899,9 +914,25 @@
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Mahdi Rameh. All rights reserved. | Updated: August 2026</p>[cite: 1]
+            <p>&copy; 2026 Mahdi Rameh. All rights reserved. | Updated: August 2026</p>
         </footer>
     </div>
+
+    <!-- اسکریپت محاسبه خودکار سن بر اساس تاریخ تولد دقیق -->
+    <script>
+        function calculateAge(birthDate) {
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            return age;
+        }
+        // تاریخ تولد: 4 ژوئن 1998
+        const birth = new Date(1998, 5, 4);
+        document.getElementById('current-age').innerText = calculateAge(birth);
+    </script>
 
 </body>
 </html>
